@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        h2{
+            color: bisque;
+               font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        h3,h4{
+                color:aquamarine;
+                
+                font-family: Georgia, 'Times New Roman', Times, serif;
+
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h2>Detail information of School {{schoolobject}}</h2>
+        <h3>Name of the School is {{schoolobject.school_name}}</h3>
+        <h3>Principal of the School is {{schoolobject.school_principal}}</h3>
+        <h3>Location of the School is {{schoolobject.school_location}}</h3>
+        <h2>Students Detail are:
+        </h2>
+        {% for stuobj in schoolobject.students.all %}
+        <h4>Name of the student is {{stuobj.student_name}}</h4>
+        <h4>Age of the student is {{stuobj.student_age}}</h4>
+
+        {% endfor %}
+
+    </center>
+</body>
+</html>
